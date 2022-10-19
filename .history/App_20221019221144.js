@@ -1,3 +1,4 @@
+import { createStackNavigator } from 'react-navigation';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Home from './scr/component/Home';

@@ -1,17 +1,21 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from 'react-navigation';
+import {
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme,
+} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/stack';
 import Home from './scr/component/Home';
-import ProductItem from './scr/component/ProductItem';
 import Product from './scr/component/Product';
 
 
 
-function App() {
+function App(props) {
   const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen false name={'Home'} component={Home} />
+        <Stack.Screen name={'Home'} component={Home} />
         <Stack.Screen name={'Product'} component={Product} />
       
       </Stack.Navigator>

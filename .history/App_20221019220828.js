@@ -1,3 +1,4 @@
+import { createStackNavigator } from 'react-navigation';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Home from './scr/component/Home';
@@ -11,8 +12,8 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen false name={'Home'} component={Home} />
-        <Stack.Screen name={'Product'} component={Product} />
+        <Stack.Screen name={'Home'} component={Home} />
+        <Stack.Screen name={'ProductItem'} component={ProductItem} />
       
       </Stack.Navigator>
     </NavigationContainer>
