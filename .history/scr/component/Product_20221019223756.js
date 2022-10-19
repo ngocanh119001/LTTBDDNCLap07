@@ -41,7 +41,7 @@ function Product(navigation) {
       .then(res => res.json())
       .then(resJson => {
         const currentUser = resJson.data;
-      console.log(resJson.data);
+        console.log(resJson.data);
         setProductItems([...productItems, {name, price, img}]);
       });
     setName(''),

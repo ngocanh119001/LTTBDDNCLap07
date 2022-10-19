@@ -116,12 +116,9 @@ function Home({navigation}) {
                  <View style={style.itemList}>
                   <Text style={style.txtName}>Tên: {item.name}</Text>
                   <Text>Giá: {item.price}$</Text>
-                  <View style={{flexDirection:'row'}} >
-                   <Button title='-' onPress={()=>setCount(count-1)}></Button>
-                   <Text></Text>
+                  <View>
                     <Text>{count}</Text>
-                    {}
-                   <Button title='+' onPress={()=>setCount(count+1)}></Button>
+                  <Button title='+'></Button>
                   </View>
                   
                  </View>

@@ -9,7 +9,6 @@ import {
   ScrollView,
   Modal,
   TextInput,
-  Button,
   KeyboardAvoidingView,
   TouchableOpacity,
 } from 'react-native';
@@ -58,6 +57,20 @@ function Home({navigation}) {
     })
 
   }
+   const addPost = (name, price, img) => {
+    axios.post("https://63477c49db76843976ac27cc.mockapi.io/api/demo/products", {
+      name: name,
+      price: price ,
+      img: img,
+    }).then((res) => {
+      setVisible1(!visible1)
+      setName(""),
+      setPrice(""),
+      setImg("")
+      getPost();
+    })
+    .catch(e => { console.log(e) })
+  }
   const handleUpdate = () => {
     axios.put("https://63477c49db76843976ac27cc.mockapi.io/api/demo/products/" + id, {
       name: name,
@@ -86,7 +99,6 @@ function Home({navigation}) {
     setPrice(""),
     setImg("")
   }
-
   return (
     <SafeAreaView style={{ marginTop: 5, flex: 1 }}>
     <View style={style.headerBar}>
@@ -116,14 +128,8 @@ function Home({navigation}) {
                  <View style={style.itemList}>
                   <Text style={style.txtName}>Tên: {item.name}</Text>
                   <Text>Giá: {item.price}$</Text>
-                  <View style={{flexDirection:'row'}} >
-                   <Button title='-' onPress={()=>setCount(count-1)}></Button>
-                   <Text></Text>
-                    <Text>{count}</Text>
-                    {}
-                   <Button title='+' onPress={()=>setCount(count+1)}></Button>
-                  </View>
-                  
+                  <Text></Text>
+
                  </View>
                    <View style={{padding:20}}>
                   <TouchableOpacity

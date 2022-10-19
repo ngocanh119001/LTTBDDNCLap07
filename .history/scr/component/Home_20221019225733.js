@@ -118,9 +118,7 @@ function Home({navigation}) {
                   <Text>Giá: {item.price}$</Text>
                   <View style={{flexDirection:'row'}} >
                    <Button title='-' onPress={()=>setCount(count-1)}></Button>
-                   <Text></Text>
                     <Text>{count}</Text>
-                    {}
                    <Button title='+' onPress={()=>setCount(count+1)}></Button>
                   </View>
                   
